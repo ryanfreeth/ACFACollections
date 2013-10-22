@@ -75,35 +75,39 @@
   </div>
   <!-- End toolbar -->
   
+  <!-- Begin below navigation -->
+  <div class="logo-wrapper">
+    <div class="logo clearfix">
+      <div class="span12 clearfix">
+        {% if settings.use_logo %}
+        <h1><a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" /></a></h1>
+        {% if template == 'index' %}
+        <h1 style="display:none"><a href="/">{{ shop.name }}</a></h1>
+        {% endif %}
+        {% else %}
+        <h1><a href="/">{{ shop.name }}</a></h1>
+        {% endif %}
+      </div> 
+    </div>
+  </div>
+  
+  <div class="nav-wrapper">
+    <section id="nav" class="nav clearfix">
+      <div class="span12 clearfix">
+        <nav class="main">
+          {% include 'dropdown' %}
+        </nav> <!-- /.main -->
+        <nav class="mobile clearfix">
+          {% include 'mobile-menu' %}
+        </nav> <!-- /.mobile --> 
+      </div> 
+    </section> 
+  </div>
+  <!-- End below navigation -->
+  
   <!-- Begin wrapper -->
   <div id="transparency" class="wrapper">
     <div class="row">      
-           
-      <!-- Begin below navigation -->
-      <div class="span12 clearfix">
-        <div class="logo">
-          {% if settings.use_logo %}
-          <h1><a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" /></a></h1>
-          {% if template == 'index' %}
-          <h1 style="display:none"><a href="/">{{ shop.name }}</a></h1>
-          {% endif %}
-          {% else %}
-          <h1><a href="/">{{ shop.name }}</a></h1>
-          {% endif %}
-        </div> 
-      </div> 
-      
-      <section id="nav" class="row p30">
-        <div class="span12">
-          <nav class="main">
-            {% include 'dropdown' %}
-          </nav> <!-- /.main -->
-          <nav class="mobile clearfix">
-            {% include 'mobile-menu' %}
-          </nav> <!-- /.mobile --> 
-        </div> 
-      </section> 
-      <!-- End below navigation -->
       
       <!-- Begin content-->
       <section id="content" class="clearfix">
