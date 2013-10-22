@@ -182,23 +182,3 @@
 
   </div><!-- helper-section -->
 <!-- end featured product -->
-
-<!-- start content page -->
-{% assign helper_welcome = false %}
-{% if pages[settings.homepage].content contains "where users go when first trying to determine a level of trust" %}{% assign helper_welcome = true %}{% endif %}
-<div class="span12 clearfix {% if helper_welcome %}helper-section{% endif %}">
-  {% if helper_welcome %}
-  <div class="note helper-note">
-    <h3>How to change this page</h3>
-    <p>You can change this area's text by editing the "About Us" page in your admin's <a href="/admin/pages">Pages section</a>.</p>
-    <p class="p0">You can also replace the "About Us" page with another page in your <a href="/admin/themes/current/settings">Theme Settings</a>.</p>
-  </div>
-  {% endif %}
-  <div class="p30 clearfix  {% if helper_welcome %}helper-content{% endif %}">
-    <div class="intro clearfix">
-      <h2>{{ pages[settings.homepage].title }}</h2>
-      {{ pages[settings.homepage].content }}
-    </div>
-  </div>
-</div>
-<!-- end content page -->

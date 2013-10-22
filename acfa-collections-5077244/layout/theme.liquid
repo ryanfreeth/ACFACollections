@@ -105,6 +105,12 @@
   </div>
   <!-- End below navigation -->
   
+  {% if template == "index" %}
+    <div class="install-shot-wrapper install-shot">
+      <a href="/"><img src="{{ 'home.jpg' | asset_url }}" alt="{{ shop.name }} installation shot" /></a>
+    </div>
+  {% endif %}
+  
   <!-- Begin wrapper -->
   <div id="transparency" class="wrapper">
     <div class="row">      

@@ -239,8 +239,9 @@ hr.divider { margin: 15px 0; background: {{ settings.border_color }}; height: 1p
 /* 2.2 - Grid System */
 .wrapper { width: 996px; margin: 0 auto; padding: 0 15px; }
 .toolbar-wrapper { display:none; width: 100%; height: 60px; background:  {{ settings.toolbar_bg_color }};}
-.logo-wrapper { width: 100%; height: 135px; background: #b8b9b9;}
-.nav-wrapper { width: 100%; height: 50px; background: #c7c7c7;}
+.logo-wrapper { width: 100%; height: auto; background: #b8b9b9;}
+.nav-wrapper { width: 100%; height: auto; background: #c7c7c7;}
+.install-shot-wrapper { width: 100%; height: auto; text-align: center; }
 
 #transparency > .row:before, #transparency > .row:after  { content: ""; display: table; }
 #transparency > .row:after { clear: both; }
@@ -325,7 +326,7 @@ ul.expanded > li, ol.expanded > li { margin-bottom: 10px; }
 nav { font-family:{{ settings.base_font | remove: 'Google+' | replace: '+', ' ' }}; }
 nav { position: relative; }
 nav > ul > li { margin-bottom: 0; }
-nav > ul > li > a { text-decoration: none; color: {{ settings.nav_link_color }}; display: block; padding: 0 15px; font-size: 17px; line-height: 50px; height: 50px; font-weight: 400; }
+nav > ul > li > a { text-decoration: none; color: {{ settings.nav_link_color }}; display: block; padding: 0 15px; font-size: 17px; line-height: 30px; height: 30px; font-weight: 400; }
 
 nav > ul > li.dropdown > a { padding-right: 15px; margin-right: 10px; background:url('{{ 'arrow-dark.png' | asset_url }}') no-repeat 100% 50%; }
 
@@ -378,11 +379,12 @@ footer .tweet_text a { color: {{ settings.body_font_color }} !important; }
 footer .tweet_text a:hover { color: {{ settings.body_font_color }} !important; opacity: 0.7; filter: alpha(opacity = 70);  }
 
 /* 3.5 - Homepage */
+.install-shot a:hover { opacity: 1; }
+
 .intro h2 { font-size: 32px; margin-bottom: 20px; }
 .intro h3 { font-family: {{ settings.base_font | remove: 'Google+' | replace: '+', ' ' }}; font-size: 14px; line-height: 27px; }
 .intro h3 a { font-family: {{ settings.base_font | remove: 'Google+' | replace: '+', ' ' }}; color: {{ settings.link_color }} !important; }
 .intro h3 a:hover { font-family: {{ settings.base_font | remove: 'Google+' | replace: '+', ' ' }}; }
-
 
 .featured-product  .display-table-cell:first-child { padding-right:40px;}
 .featured-product h2 { margin-bottom:5px;}
