@@ -2,24 +2,6 @@
   
   <div class="row clearfix">
     
-    <!-- Begin breadcrumb -->
-    <div class="span12">
-      <div class="breadcrumb clearfix">
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span> 
-        <span class="arrow-space">&#62;</span>
-        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-          {% if collection %}
-            <a href="{{ collection.url }}" title="{{ collection.title | escape }}">{{ collection.title }}</a>
-          {% else %}
-            <a href="/collections/all" title="All Products">Products</a>
-          {% endif %}
-        </span>
-        <span class="arrow-space">&#62;</span>
-        <strong>{{ product.title }}</strong>
-      </div>
-    </div>
-    <!-- End breadcrumb -->
-    
     <!-- Begin product photos -->
     <div class="span6">
       
@@ -73,6 +55,14 @@
     <div class="span6">
       
       <h1 class="title">{{ product.title }}</h1>
+      
+      <ul>
+        <li>4 canvas pieces 14&quot;x14&quot; each</li>
+        <li>1.5&quot; deep gallery wrap edge</li>
+        <li>hanger on back</li>
+        <li>signed by the artist Angela Cameron</li>
+        <li>view display concepts to hang it how you want it</li>
+      </ul>
       
       <div class="purchase">
         <h2 class="price" id="price-preview">{{ product.price_min | money }}{% if product.price_min < product.compare_at_price_min %} <del>{{ product.compare_at_price_min | money }}</del>{% endif %}</h2>
