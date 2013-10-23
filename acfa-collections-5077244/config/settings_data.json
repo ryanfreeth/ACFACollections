@@ -41,7 +41,7 @@
     "slide_4": false,
     "enable_product_image_zoom": false,
     "display_quantity_dropdown": false,
-    "show_related_products": true,
+    "show_related_products": false,
     "collection_tags": true,
     "footer_display_newsletter": false,
     "accept_visa": true,
