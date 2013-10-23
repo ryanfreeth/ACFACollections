@@ -107,7 +107,7 @@
   
   {% if template == "index" %}
     <div class="install-shot-wrapper install-shot">
-      <a href="/"><img src="{{ 'home.jpg' | asset_url }}" alt="{{ shop.name }} installation shot" /></a>
+      <a href="{{ collections.all.url }}"><img src="{{ 'home.jpg' | asset_url }}" alt="{{ shop.name }} installation shot" /></a>
     </div>
   {% endif %}
   
