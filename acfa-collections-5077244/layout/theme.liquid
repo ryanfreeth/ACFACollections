@@ -205,7 +205,7 @@
         
         <!-- Begin copyright -->
         <div class="span12 tc copyright">
-          <p>Copyright &copy; {{ 'now' | date: "%Y" }} {{ shop.name }} | {{ powered_by_link }}</p>
+          <p>Copyright &copy; {{ 'now' | date: "%Y" }} {{ shop.name }}</p>
           <ul class="credit-cards clearfix">
             {% if settings.accept_visa %}<li><img src="{{ 'icon-cc-visa.gif' | asset_url }}" alt="Visa" /></li>{% endif %}
             {% if settings.accept_mastercard %}<li><img src="{{ 'icon-cc-mastercard.gif' | asset_url }}" alt="MasterCard" /></li>{% endif %}
