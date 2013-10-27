@@ -2,8 +2,8 @@
   "current": {
     "customer_layout": "theme",
     "shop_bg_color": "#f1eedd",
-    "toolbar_bg_color": "#000000",
-    "toolbar_text_color": "#bbbbbb",
+    "toolbar_bg_color": "#b8b9b9",
+    "toolbar_text_color": "#ffffff",
     "link_color": "#f45b4f",
     "nav_link_color": "#888888",
     "body_font_color": "#5d5d5d",
