@@ -1,0 +1,55 @@
+{% if product.tags.size > 0 %}
+    
+<div class="row">
+  <div class="span12">
+    <h3 class="collection-title">Related products</h3>
+  </div>
+</div> 
+    
+<div class="row products">
+  
+  {% paginate collections.all.products by 1000 %}
+  {% for prod in collections.all.products %}
+  {% if product.tags contains prod.title %} 
+  <div class="span3 product">
+  
+    {% if prod.price_min < prod.compare_at_price_min %}
+      <span class="circle sale">Sale</span>
+    {% endif %}
+  
+    <div class="image">
+      <a href="{{ url }}">
+        <img src="{{ prod.featured_image | product_img_url: 'large' }}" alt="{{ prod.title | escape  }}" />
+      </a>
+    </div>
+  
+    <div class="details">
+      <a href="{{ url }}" class="clearfix">
+        <h4 class="title">{{ prod.title }}</h4>
+      
+        <span class="price">
+        {% if prod.available %}
+          {% if prod.compare_at_price_max > prod.price %}
+            <del>{{ prod.compare_at_price | money }}</del>
+          {% endif %}
+          {% if prod.price_varies %}
+          <small><em>from</em></small>
+          {% endif %}
+          {{ prod.price | money }}
+        {% else %}
+          {{ prod.price | money }} Sold Out
+        {% endif %}
+        </span>
+      
+      </a>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endpaginate %}
+
+
+
+</div> <!-- End row products -->
+
+{% endif %}
