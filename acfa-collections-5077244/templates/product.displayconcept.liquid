@@ -6,68 +6,20 @@
   
   <div class="row clearfix">
     
-    <!-- Begin product photos -->
-    <div class="span6">
-      
-      <!-- Begin featured image -->
-      <div class="image">
-        {% if settings.enable_product_image_zoom %}
-        <a href="{{ product.featured_image | product_img_url: 'original' }}" class="cloud-zoom" rel="position: 'inside', showTitle: 'false'" id="placeholder">
-          <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
+  <!-- Begin product photos -->
+    <div class="image">
+      {% for image in product.images %}
+      <div class="image span6{% cycle 'last-in-row': '', ' last-in-row' %}">
+        <a href="{{ image | product_img_url: 'original' }}" class="zoom" id="placeholder" data-original-image="{{ image | product_img_url: 'original' }}">
+          <img src="{{ image | product_img_url: 'original' }}" alt="{{ image.alt | escape }}" />
         </a>
-        {% else %}
-        <a href="{{ product.featured_image | product_img_url: 'original' }}" class="zoom" id="placeholder">
-          <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
-        </a>
-        {% endif %}
       </div>
-      <!-- End product image -->
-      
-      {% if product.images.size > 1%}
-      <!-- Begin thumbnails -->
-      <div class="thumbs clearfix" style="margin-left:-15px;">
-        {% for image in product.images %}
-        {% if settings.enable_product_image_zoom %}
-        <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
-          <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: '{{ image | product_img_url: 'original' }}', tint: '#ffffff'">
-            <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
-          </a>
-        </div>
-        {% else %}
-        <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
-          <a href="{{ image | product_img_url: 'original' }}" data-original-image="{{ image | product_img_url: 'original' }}">
-            <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
-          </a>
-        </div>
-        {% endif %}
-        {% endfor %}
-      </div>
-      <!-- End thumbnails -->
-      <style>
-      .thumbs .image { margin: 15px 0 }
-      .thumbs .image { padding: 0 15px }
-      .thumbs .last-in-row { padding-right: 0 }
-      </style>
-      {% endif %}
-      
+      {% endfor %}
     </div>
-    <!-- End product photos -->
- 
+    <!-- End product image -->
     
-    
-    <!-- Begin description -->
-    <div class="span6">
-      
-      <!-- <h1 class="title">{{ product.title }}</h1> -->
-
-      <!-- <div class="description">
-        {{ product.description }}
-      </div> -->
-
-    </div>
-    <!-- End description -->
-
   </div>
+  <!-- End product photos -->
 
   <!-- Begin related product -->
   {% include 'related-by-tags' %}
