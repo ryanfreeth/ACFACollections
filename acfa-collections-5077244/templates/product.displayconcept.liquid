@@ -1,23 +1,19 @@
 <div id="product" class="{{ product.handle }}">
   
   <div class="row clearfix">
-    <h1 class="title">{{ product.title }}</h1>
+    <h1 class="title tc">{{ product.title }}</h1>
   </div>
   
   <div class="row clearfix">
     
   <!-- Begin product photos -->
-    <div class="image">
-      {% for image in product.images %}
-      <div class="image span6{% cycle 'last-in-row': '', ' last-in-row' %}">
-        <a href="{{ image | product_img_url: 'original' }}" class="zoom" id="placeholder" data-original-image="{{ image | product_img_url: 'original' }}">
-          <img src="{{ image | product_img_url: 'original' }}" alt="{{ image.alt | escape }}" />
-        </a>
-      </div>
-      {% endfor %}
+    {% for image in product.images %}
+    <div class="image span6{% cycle 'last-in-row': ' tr', ' last-in-row' %}">
+      <a href="{{ image | product_img_url: 'original' }}" class="zoom" id="placeholder" data-original-image="{{ image | product_img_url: 'original' }}">
+        <img src="{{ image | product_img_url: 'original' }}" alt="{{ image.alt | escape }}" />
+      </a>
     </div>
-    <!-- End product image -->
-    
+    {% endfor %}
   </div>
   <!-- End product photos -->
 
