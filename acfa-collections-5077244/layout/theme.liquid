@@ -133,7 +133,18 @@
             {% endfor %}
           </div> <!-- /#collection.row -->
           {% else %}
-          {{ content_for_layout }}
+            {% include 'lockdown' %}
+            {% if allowed %}
+                {{ content_for_layout }}
+            {% else %}
+                {% if template contains 'cart' %}
+                    {{ content_for_layout }}
+                {% elsif customer %}
+                    {% include 'lock-message' %}
+                {% else %}
+                    <meta content="0; url=/account/login?checkout_url={{ return_url }}" http-equiv="refresh" />
+                {% endif %}
+            {% endif %}
           {% endif %}
       </section>
       <!-- End content-->
