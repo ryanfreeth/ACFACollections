@@ -10,7 +10,7 @@
     <div class="span6">
       
       <!-- Begin featured image -->
-      <div class="image featured">
+      <div class="image">
         {% if settings.enable_product_image_zoom %}
         <a href="{{ product.featured_image | product_img_url: 'original' }}" class="cloud-zoom" rel="position: 'inside', showTitle: 'false'" id="placeholder">
           <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
