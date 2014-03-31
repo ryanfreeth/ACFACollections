@@ -239,8 +239,8 @@ hr.divider { margin: 15px 0; background: {{ settings.border_color }}; height: 1p
 /* 2.2 - Grid System */
 .wrapper { width: 996px; margin: 0 auto; padding: 0 15px; }
 .toolbar-wrapper { width: 100%; height: 50px; background:  {{ settings.toolbar_bg_color }};}
-.logo-wrapper { width: 100%; height: auto; background: #b8b9b9;}
-.nav-wrapper { width: 100%; height: auto; background: #c7c7c7;}
+.logo-wrapper { width: 100%; height: auto; background: {{ settings.toolbar_bg_color }};}
+.nav-wrapper { width: 100%; height: auto; background: {{ settings.toolbar_nav_bg_color }};}
 .install-shot-wrapper { width: 100%; height: auto; text-align: center; }
 
 #transparency > .row:before, #transparency > .row:after  { content: ""; display: table; }
