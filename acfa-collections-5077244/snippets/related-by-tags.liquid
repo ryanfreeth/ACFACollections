@@ -25,7 +25,7 @@
   
     <div class="details">
       <a href="{{ url }}" class="clearfix">
-        <h4 class="title">{{ prod.title }}</h4>
+        <!-- <h4 class="title">{{ prod.title }}</h4> -->
       
         <span class="price">
         {% if prod.available %}
@@ -35,9 +35,9 @@
           {% if prod.price_varies %}
           <small><em>from</em></small>
           {% endif %}
-          {{ prod.price | money }}
+          {{ prod.price | money | remove: '.00' }}
         {% else %}
-          {{ prod.price | money }} Sold Out
+          {{ prod.price | money | remove: '.00' }} Sold Out
         {% endif %}
         </span>
       
