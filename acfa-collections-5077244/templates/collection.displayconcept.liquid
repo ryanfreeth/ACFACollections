@@ -1,5 +1,17 @@
 <div id="collection">
-  
+  <!-- Begin collection info -->
+  <div class="row">
+    <div class="span12">      
+      <!-- Begin collection description -->
+      <div class="description display-concept">
+        {% if collection.description != "" %}
+          {{ collection.description }}
+        {% endif %}
+      </div>
+      <!-- End collection description -->
+    </div>
+  </div>
+  <!-- End collection info -->
   {% paginate collection.products by settings.pagination_limit %}
   
   <!-- Begin no products -->
@@ -21,18 +33,4 @@
 
   {% endpaginate %}
   <!-- End no products -->
-  
-  <!-- Begin collection info -->
-  <div class="row">
-    <div class="span12">      
-      <!-- Begin collection description -->
-      <div class="description display-concept">
-        {% if collection.description != "" %}
-          {{ collection.description }}
-        {% endif %}
-      </div>
-      <!-- End collection description -->
-    </div>
-  </div>
-  <!-- End collection info -->
 </div>
