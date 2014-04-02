@@ -18,13 +18,13 @@
     {% endif %}
   
     <div class="image">
-      <a href="{{ url }}">
+      <a href="{{ prod.url }}">
         <img src="{{ prod.featured_image | product_img_url: 'large' }}" alt="{{ prod.title | escape  }}" />
       </a>
     </div>
   
     <div class="details">
-      <a href="{{ url }}" class="clearfix">
+      <a href="{{ prod.url }}" class="clearfix">
         <!-- <h4 class="title">{{ prod.title }}</h4> -->
       
         <span class="price">
@@ -37,7 +37,7 @@
           {% endif %}
           {{ prod.price | money | remove: '.00' }}
         {% else %}
-          {{ prod.price | money | remove: '.00' }} Sold Out
+          {{ prod.price | money | remove: '.00' }} 
         {% endif %}
         </span>
       
